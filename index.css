@@ -42,11 +42,20 @@ h1 {
     height: 150px;
     background-color: antiquewhite;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-screen p {
+    color: black;
+    text-align: center;
+    font-size: 30px;
 }
 
 .buttons {
     width: 400px;
-    height:400px;
+    height: 400px;
     background-color: rgb(152, 146, 146);
     border-radius: 0 0 20px 20px;
     display: flex;
@@ -57,13 +66,15 @@ h1 {
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 15px;
 }
 
 .operators {
     flex: 1;
     padding: 15px;
     display: flex;
+    flex-direction: column;
+    align-items:center ;
     flex-wrap: wrap;
     gap: 5px;
 }
@@ -77,10 +88,8 @@ h1 {
 }
 
 .operators button{
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     color: white;
     background-color: black;
     border: none;

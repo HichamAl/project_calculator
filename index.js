@@ -1,8 +1,10 @@
-console.log("test");
+let number1 = null;
+let operator = null;
+let number2 = null;
 
-const number1 = null;
-const operator = null;
-const number2 = null;
+function populateDisplay(number1, operator, number2){
+
+}
 
 function operate(number1, operator, number2){
     if (operator === "+"){
