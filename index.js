@@ -1,24 +1,38 @@
 // use these to update display?
-let number1 = 10;
-let operator = "*";
-let number2 = 20;
+let number1 = "";
+let operator = "";
+let number2 = "";
 
 const displayScreen = document.querySelector(".white-screen");
-let operationText = document.createTextNode(number1 + operator + number2); 
-displayScreen.appendChild(operationText);
+const numbers = document.querySelectorAll(".numbers button");
+const numberOne = document.createElement("p");
+const operatorDisplayed = document.createElement("p");
+const numberTwo = document.createElement("p");
+displayScreen.appendChild(numberOne);
+displayScreen.appendChild(operatorDisplayed);
+displayScreen.appendChild(numberTwo);
 
-// get values from user input
-// store the value in variables above
+numbers.forEach((numbers) => {
+    // and for each one we add a 'click' listener
+    numbers.addEventListener("click", () => {
+        if (operator.length === 1){
+            number2 += numbers.innerHTML;
+        } else {
+            number1 += numbers.innerHTML;
+        }   
+        numberOne.innerHTML = number1;
+        numberTwo.innerHTML = number2;
+    });
+  });
 
-if (operator === "*"){
-    console.log(multiplication(number1,number2));
-} else if (operator === "+") {
-    console.log(addition(number1,number2));
-} else if (operator === "-"){
-    console.log(subtraction(number1,number2));
-} else if (operator === "/"){
-    console.log(division(number1,number2));
-}
+const operators = document.querySelectorAll(".operators button");
+operators.forEach((operators) => {
+    // and for each one we add a 'click' listener
+    operators.addEventListener("click", () => {
+      operator += operators.innerHTML;
+      operatorDisplayed.innerHTML = operator.slice(-1); // get last operator clicked
+    });
+  });
 
 // already tested successfully
 function addition(number1, number2){
