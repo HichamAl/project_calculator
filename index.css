@@ -45,12 +45,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.white-screen p {
     color: black;
-    text-align: center;
-    font-size: 30px;
 }
 
 .buttons {
