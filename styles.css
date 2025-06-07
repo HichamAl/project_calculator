@@ -1,0 +1,56 @@
+/* width = 300px + 4px + 4px + 12px + 12px  = 332px (size + border + padding)
+height = 500px + 4px + 4px +12px + 12px = 532px */
+.calculator {
+    background-color: peachpuff;
+    border: 4px solid brown ;
+    height: 500px;
+    width: 300px;
+    border-radius: 20px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* width = 292px + 4px + 4px = 300px 
+height = 159px + 4px +4px = 167px */
+.display {
+    background-color: aqua;
+    border: 4px solid blue;
+    flex: 1;
+    color: white;
+    font-size: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+/* width = 292px + 4px + 4px = 300px
+height = 325px + 4px + 4px = 333px */
+
+.button_container {
+    background-color: lightcoral;
+    border: 4px solid red;
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 292 (width without border) - 32 = 260 /4 = width for button*/
+/* 325 - 40  = 293  / 5 = height for button*/
+.button_container div {
+    background-color: plum;
+    border: 4px solid indigo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 58.6px;
+    width: 65px;
+}
+
+
+/* AC 3x zo groot 
+    0 2x zo groot
+    de rest 1x 
+*/
+
