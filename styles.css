@@ -22,6 +22,7 @@ height = 159px + 4px +4px = 167px */
     display: flex;
     justify-content: flex-end;
     align-items: end;
+    padding: 10px;
 }
 
 /* width = 292px + 4px + 4px = 300px
@@ -48,9 +49,12 @@ height = 325px + 4px + 4px = 333px */
     width: 65px;
 }
 
+.button_container .ac {
+    width: 211px;
+}
 
-/* AC 3x zo groot 
-    0 2x zo groot
-    de rest 1x 
-*/
+.button_container .zero {
+    width: 138px;
+}
+
 
