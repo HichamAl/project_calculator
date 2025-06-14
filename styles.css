@@ -38,15 +38,16 @@ height = 325px + 4px + 4px = 333px */
 
 /* 292 (width without border) - 32 = 260 /4 = width for button*/
 /* 325 - 40  = 293  / 5 = height for button*/
-.button_container div {
+.button_container button {
     background-color: plum;
     border: 4px solid indigo;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    height: 58.6px;
     width: 65px;
+    font-size: large;
+    padding: 0;
 }
 
 .button_container .ac {
