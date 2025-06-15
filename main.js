@@ -19,6 +19,10 @@ buttons.forEach((button) => {
       if (isNaN(value) == false){
         number1 += value;
 
+        display.textContent = "";
+
+        display.append(number1);
+
         console.log(number1);
       }
       
