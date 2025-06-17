@@ -46,8 +46,16 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const value = button.innerHTML;
+
       // eerst happy path dat alles perfect gaat eerst 2 cijfers dan
       // operator dan weer 2 cijfers 
+
+      if (value == "AC"){
+        number1 = "";
+        number2 = "";
+        operator = "";
+        display.textContent = "0";
+      }
 
       if (isNaN(value) == false && operator == ""){
         number1 += value;
@@ -77,8 +85,9 @@ buttons.forEach((button) => {
       // Hardest part !!
       if (value == "="){
         let result  = operate(number1, operator, number2);
+        let roundedResult = Math.round(result * 100) / 100;
         display.textContent = "";
-        display.append(`${number1} ${operator} ${number2} = ${result}`);
+        display.append(`${number1} ${operator} ${number2} = ${roundedResult}`);
       }
      
     
