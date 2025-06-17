@@ -61,29 +61,25 @@ buttons.forEach((button) => {
         number1 += value;
         display.textContent = "";
         display.append(number1);
-        console.log(number1);
-        console.log(operator.length);
       }
 
-      if (value == "/" || value == "x" || value == "-" || value == "+" ){
-        operator += value;
+      if (value == "/" || value == "x" || value == "-" || value == "+"){
+        if (number1 != ""){
+          operator += value;
         display.textContent = "";
         display.append(`${number1} ${operator}`);
-        console.log(operator);
-        console.log(operator.length);
+        }
+        
       }
 
       if (isNaN(value) == false && operator.length > 0){
         number2 += value;
         display.textContent = "";
         display.append(`${number1} ${operator} ${number2}`);
-        console.log(number2);
-        console.log(operator.length);
-
       }
 
       // Hardest part !!
-      if (value == "="){
+      if (value == "=" && number1 != "" && number2 != "" && operator != ""){
         let result  = operate(number1, operator, number2);
         let roundedResult = Math.round(result * 100) / 100;
         display.textContent = "";
