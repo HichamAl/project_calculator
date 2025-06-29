@@ -82,11 +82,17 @@ buttons.forEach((button) => {
         let roundedResult = Math.round(result * 100) / 100;
         display.textContent = "";
         display.append(`${number1} ${operator} ${number2} = ${roundedResult}`);
+
+        number1 = "";
+        number2 = "";
+        operator = "";
+
+      }
+      
+      if (roundedResult ){
+
       }
 
-      if (number1 && operator && number2){
-
-      }
      
     
     });
