@@ -47,9 +47,6 @@ buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const value = button.innerHTML;
 
-      // eerst happy path dat alles perfect gaat eerst 2 cijfers dan
-      // operator dan weer 2 cijfers 
-
       if (value == "AC"){
         number1 = "";
         number2 = "";
@@ -65,9 +62,10 @@ buttons.forEach((button) => {
 
       if (value == "/" || value == "x" || value == "-" || value == "+"){
         if (number1 != ""){
+          operator = "";
           operator += value;
-        display.textContent = "";
-        display.append(`${number1} ${operator}`);
+          display.textContent = "";
+          display.append(`${number1} ${operator} ${number2}`);
         }
         
       }
@@ -84,6 +82,10 @@ buttons.forEach((button) => {
         let roundedResult = Math.round(result * 100) / 100;
         display.textContent = "";
         display.append(`${number1} ${operator} ${number2} = ${roundedResult}`);
+      }
+
+      if (number1 && operator && number2){
+
       }
      
     
