@@ -19,7 +19,6 @@ function operate (number1, operator, number2){
   }
 }
 
-
 function add (number1, number2){
     let result = Number(number1) + Number(number2);
     return result
@@ -62,39 +61,51 @@ buttons.forEach((button) => {
 
       if (value == "/" || value == "x" || value == "-" || value == "+"){
         if (number1 != ""){
-          operator = "";
           operator += value;
           display.textContent = "";
-          display.append(`${number1} ${operator} ${number2}`);
+          display.append(`${number1} ${operator.slice(-1)} ${number2}`);
         }
-        
       }
 
       if (isNaN(value) == false && operator.length > 0){
         number2 += value;
         display.textContent = "";
-        display.append(`${number1} ${operator} ${number2}`);
+        display.append(`${number1} ${operator.slice(-1)} ${number2}`);
       }
 
       // Hardest part !!
       if (value == "=" && number1 != "" && number2 != "" && operator != ""){
-        let result  = operate(number1, operator, number2);
+        let result  = operate(number1, operator.slice(-1), number2);
         let roundedResult = Math.round(result * 100) / 100;
         display.textContent = "";
-        display.append(`${number1} ${operator} ${number2} = ${roundedResult}`);
+        display.append(`${number1} ${operator.slice(-1)} ${number2} = ${roundedResult}`);
 
-        number1 = "";
-        number2 = "";
+        number1 = roundedResult;
         operator = "";
+        number2 = "";
 
-      }
+      }   
       
-      if (roundedResult ){
+      if (value == "+" && number1 != "" && number2 != "" && operator != "" ||
+          value == "-" && number1 != "" && number2 != "" && operator != "" ||
+          value == "x" && number1 != "" && number2 != "" && operator != "" ||
+          value == "/" && number1 != "" && number2 != "" && operator != "") {
+        
+          let result  = operate(number1, operator.slice(-2, -1), number2);
+          let roundedResult = Math.round(result * 100) / 100;
+          display.textContent = "";
+          display.append(`${number1} ${operator.slice(-2, -1)} ${number2} = ${roundedResult}`);
 
+          number1 = roundedResult;
+          number2 = "";
+          console.log(operator.slice(-1));
+
+          if (isNaN(value) == false ){
+            number2 += value;
+            display.textContent = "";
+            display.append(`${number1} ${operator.slice(-1)} ${number2}`);
+          }
       }
-
-     
-    
     });
   });
 
