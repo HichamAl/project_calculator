@@ -1,9 +1,7 @@
-// This project is difficult 
 let number1 = "";
 let operator = "";
 let number2 = "";
 
-// this function makes the calculator work unlimited amount of times
 function operate (number1, operator, number2){
   if (operator == "+"){
     return add(number1, number2);
@@ -73,7 +71,6 @@ buttons.forEach((button) => {
         display.append(`${number1} ${operator.slice(-1)} ${number2}`);
       }
 
-      // Hardest part !!
       if (value == "=" && number1 != "" && number2 != "" && operator != ""){
         let result  = operate(number1, operator.slice(-1), number2);
         let roundedResult = Math.round(result * 100) / 100;
@@ -97,7 +94,6 @@ buttons.forEach((button) => {
 
           number1 = roundedResult;
           number2 = "";
-          console.log(operator.slice(-1));
 
           if (isNaN(value) == false ){
             number2 += value;
