@@ -83,9 +83,8 @@ buttons.forEach((button) => {
         number1 = roundedResult;
         operator = "";
         number2 = "";
-
       }   
-      
+
       if (value == "+" && number1 != "" && number2 != "" && operator != "" ||
           value == "-" && number1 != "" && number2 != "" && operator != "" ||
           value == "x" && number1 != "" && number2 != "" && operator != "" ||
